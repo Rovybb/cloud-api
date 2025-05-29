@@ -1,0 +1,20 @@
+<div class="home">
+  <app-navbar *ngIf="!(isLogged() | async)"></app-navbar>
+  <app-navbar-home *ngIf="isLogged() | async"></app-navbar-home>
+  <div id="Home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" *ngIf="isLogged() | async">
+      <h1>Welcome back!</h1>
+      <p>Anything for rent today?</p>
+    </div>
+    <div class="hero-content" *ngIf="!(isLogged() | async)">
+      <h1>Welcome to Smart Real Estate</h1>
+      <p>
+        Find your dream property with just a few clicks. We'll help you discover
+        it fast and comfortably. Easily find the home you’ve always wanted. Quick,
+        simple, and hassle-free!
+      </p>
+      <a href="auth/register" class="cta-button">Browse Listings</a>
+    </div>
+  </div>
+</div>

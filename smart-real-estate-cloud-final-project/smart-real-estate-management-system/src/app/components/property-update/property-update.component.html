@@ -1,0 +1,127 @@
+<div class="property-update">
+  <h1>Update Existent Property</h1>
+  <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      
+      <label for="title">Title</label>
+      <input id="title" formControlName="title" />
+      <div class="error" *ngIf="propertyForm.get('title')?.hasError('required')">
+        Title is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('title')?.hasError('maxlength')">
+        Title cannot be longer than 100 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div class="error" *ngIf="propertyForm.get('description')?.hasError('required')">
+        Description is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('description')?.hasError('maxlength')">
+        Description cannot be longer than 500 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" formControlName="status">
+        <option value="" disabled>Select status</option>
+        <option value="AVAILABLE">Available</option>
+        <option value="SOLD">Sold</option>
+        <option value="RENTED">Rented</option>
+      </select>
+      <div class="error" *ngIf="propertyForm.get('status')?.hasError('required')">
+        Status is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select id="type" formControlName="type">
+        <option value="" disabled>Select type</option>
+        <option value="HOUSE">House</option>
+        <option value="APARTMENT">Apartment</option>
+        <option value="LAND">Land</option>
+        <option value="COMMERCIAL">Commercial</option>
+      </select>
+      <div class="error" *ngIf="propertyForm.get('type')?.hasError('required')">
+        Type is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" />
+      <div class="error" *ngIf="propertyForm.get('price')?.hasError('required')">
+        Price is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('price')?.hasError('min')">
+        Price must be greater than 0
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input id="address" formControlName="address" />
+      <div class="error" *ngIf="propertyForm.get('address')?.hasError('required')">
+        Address is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('address')?.hasError('maxlength')">
+        Address cannot be longer than 200 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="area">Area (sqm)</label>
+      <input id="area" type="number" formControlName="area" />
+      <div class="error" *ngIf="propertyForm.get('area')?.hasError('required')">
+        Area is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="rooms">Rooms</label>
+      <input id="rooms" type="number" formControlName="rooms" />
+      <div class="error" *ngIf="propertyForm.get('rooms')?.hasError('required')">
+        Number of rooms is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('rooms')?.hasError('min')">
+        Rooms must be greater than or equal to 0
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="bathrooms">Bathrooms</label>
+      <input id="bathrooms" type="number" formControlName="bathrooms" />
+      <div class="error" *ngIf="propertyForm.get('bathrooms')?.hasError('required')">
+        Number of bathrooms is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('bathrooms')?.hasError('min')">
+        Bathrooms must be greater than or equal to 0
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="constructionYear">Construction Year</label>
+      <input id="constructionYear" type="number" formControlName="constructionYear" />
+      <div class="error" *ngIf="propertyForm.get('constructionYear')?.hasError('required')">
+        Construction Year is required
+      </div>
+      <div class="error" *ngIf="propertyForm.get('constructionYear')?.hasError('min')">
+        Construction Year must be greater than 1500
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="userId">User ID</label>
+      <input id="userId" formControlName="userId" />
+      <div class="error" *ngIf="propertyForm.get('userId')?.hasError('required')">
+        User ID is required
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="propertyForm.invalid">Update Property</button>
+  </form>
+</div>

@@ -1,0 +1,149 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #161616;
+}
+
+.register-form {
+  position: relative;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  height: 450px;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-button {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 20px;
+  transition: color 0.1s ease-in-out;
+}
+
+.back-button:hover {
+  color: #28a0a0;
+}
+
+.register-form h1 {
+  font-size: 24px;
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-text {
+  color: #f0f0f0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-link {
+  color: #186C6C;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-link:hover {
+  color: #28a0a0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #186C6C;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #f0f0f0;
+  background-color: #186C6C;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #005f5f;
+}
+
+button[type="submit"]:disabled {
+  background-color: #444444;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 5px;
+  color: #e63946;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error small {
+  display: block;
+  margin-top: 2px;
+}
+
+.form-error {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #444444;
+  border-radius: 5px;
+  color: #e63946;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-error p {
+  margin: 0;
+}

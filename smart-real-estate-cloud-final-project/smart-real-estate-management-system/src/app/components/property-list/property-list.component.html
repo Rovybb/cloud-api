@@ -1,0 +1,105 @@
+<div class="property-management-container">
+  <app-navbar-home></app-navbar-home>
+
+  <div class="property-management-content">
+    <h1>Property List</h1>
+    <button (click)="navigateToCreate()">Create New Property</button>
+
+    <!-- Câmpul de căutare principal -->
+    <div class="search-bar">
+      <label for="title">
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+      </label>
+      <input
+        type="text"
+        id="title"
+        [(ngModel)]="filters['title']"
+        name="title"
+        placeholder="Search a property"
+      />
+    </div>
+    
+    <div class="search-section">
+      <form (ngSubmit)="applyFilters()" #filterForm="ngForm">
+
+        <!-- Container pentru butoane -->
+        <div class="button-container">
+          <button type="submit">Apply Filters</button>
+          <button type="button" (click)="resetFilters()">Reset</button>
+        </div>
+
+        <!-- Containerele pentru filtre -->
+        <div class="filter-container">
+          <div>
+            <label for="description">Description</label>
+            <input type="text" id="description" [(ngModel)]="filters['description']" name="description" />
+          </div>
+
+          <div>
+            <label for="price_min">Min Price</label>
+            <input type="number" id="price_min" [(ngModel)]="filters['price_min']" name="price_min" />
+          </div>
+
+          <div>
+            <label for="price_max">Max Price</label>
+            <input type="number" id="price_max" [(ngModel)]="filters['price_max']" name="price_max" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="properties-list">
+      <div class="property-card" *ngFor="let property of properties">
+        <!-- Zonă de imagine -->
+        <div class="image-container">
+          <img [src]="
+              property.imageUrls?.length
+                ? property.imageUrls?.[0]
+                : 'assets/placeholder.jpg'
+            " alt="Property Image" />
+        </div>
+
+        <!-- Zonă de informații -->
+        <div class="info-section">
+          <h2 class="property-title">
+            <span>{{ property.title }}</span>
+          </h2>
+          <p class="description">
+            Description: <span>{{ property.description }}</span>
+          </p>
+          <p class="type">
+            Type: <span>{{ getPropertyType(property.type) }}</span>
+          </p>
+          <p class="status">
+            Status: <span>{{ getPropertyStatus(property.status) }}</span>
+          </p>
+          <p class="price">
+            Price: <span>{{ property.price }}$</span>
+          </p>
+          <p class="area">
+            Area: <span>{{ property.area }} m2</span>
+          </p>
+
+          <!-- Buton "View All Details" -->
+          <button class="btn-view-details" (click)="viewDetails(property)">
+            View All Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secțiunea de paginare -->
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="pageNumber === 1">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+      </button>
+      <button *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="i + 1 === pageNumber"
+        (click)="goToPage(i + 1)">
+        {{ i + 1 }}
+      </button>
+      <button (click)="nextPage()" [disabled]="pageNumber === totalPages">
+        <fa-icon [icon]="faArrowRight"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

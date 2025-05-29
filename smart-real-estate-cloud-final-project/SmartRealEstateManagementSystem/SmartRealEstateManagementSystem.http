@@ -1,0 +1,6 @@
+@SmartRealEstateManagementSystem_HostAddress = http://localhost:5219
+
+GET {{SmartRealEstateManagementSystem_HostAddress}}/api/v1/
+Accept: application/json
+
+###

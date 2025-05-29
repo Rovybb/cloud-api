@@ -1,0 +1,92 @@
+.property-create {
+  width: 100%;
+  background-color: #161616;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+app-navbar-home {
+  width: 100%;
+}
+
+.property-create-card {
+  flex-grow: 1;
+  width: 600px;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+.property-create h1 {
+  font-size: 24px;
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #186C6C;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #186C6C;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #005f5f;
+}
+
+button[type="submit"]:disabled {
+  background-color: #444444;
+  cursor: not-allowed;
+}

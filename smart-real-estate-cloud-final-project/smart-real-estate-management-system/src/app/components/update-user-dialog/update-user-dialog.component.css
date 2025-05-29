@@ -1,0 +1,19 @@
+/* update-user-dialog.component.css */
+
+.full-width {
+    width: 100%;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .mat-dialog-content {
+    overflow: hidden; /* Prevents scrollbar in the dialog */
+  }
+  
+  .mat-form-field {
+    margin-bottom: 15px;
+  }
+  

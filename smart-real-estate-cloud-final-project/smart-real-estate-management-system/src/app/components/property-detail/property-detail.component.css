@@ -1,0 +1,302 @@
+.property-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #161616;
+}
+
+app-navbar-home {
+  width: 100%;
+}
+
+.property-detail-content {
+  width: 600px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+.property-detail h1 {
+  font-size: 30px;
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.property-info {
+  margin-bottom: 20px;
+}
+
+.property-info h2 {
+  font-size: 21px;
+  color: #f0f0f0;
+}
+
+.property-info p {
+  font-size: 16px;
+  color: #dddddd;
+}
+
+.property-info p strong {
+  font-weight: bold;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  color: #f0f0f0;
+  background-color: #186C6C;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #005f5f;
+}
+
+button:disabled {
+  background-color: #444444;
+  cursor: not-allowed;
+}
+
+button.delete {
+  background-color: #313131; 
+}
+
+button.delete:hover {
+  background-color: #2d2d2d;  
+}
+
+button.update {
+  background-color: #313131;
+}
+
+button.update:hover {
+  background-color: #2d2d2d;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.back-button {
+  margin-top: 10px;
+}
+
+.property-images {
+  margin: 20px 0;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.image-upload {
+  margin-top: 20px;
+}
+
+.image-upload h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f0f0f0;
+}
+
+.image-upload label {
+  font-size: 30px;
+  color: #f0f0f0;
+}
+
+.image-upload label:hover {
+  color: #186C6C;
+  cursor: pointer;
+}
+
+.image-upload input {
+  display: none;
+}
+
+.loading-message {
+  font-size: 14px;
+  color: #186C6C;
+  margin-top: 5px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.zoom-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.inquiry-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.inquiry-modal-content {
+  background: #1e1e1e;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+
+.inquiry-modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #f0f0f0;
+}
+
+.inquiry-modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #444;
+  background-color: #333;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+.inquiry-modal-content .popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inquiry-modal-content button {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #186C6C;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.inquiry-modal-content button:hover {
+  background-color: #005f5f;
+}
+
+.inquiry-modal-content button:nth-child(2) {
+  background-color: #313131;
+}
+
+.inquiry-modal-content button:nth-child(2):hover {
+  background-color: #2d2d2d;
+}
+
+.payment-success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-success-content {
+  background: #1e1e1e;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.payment-success-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #f0f0f0;
+}
+
+.payment-success-content button {
+  padding: 10px 20px;
+  background-color: #186C6C;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-success-content button:hover {
+  background-color: #005f5f;
+}

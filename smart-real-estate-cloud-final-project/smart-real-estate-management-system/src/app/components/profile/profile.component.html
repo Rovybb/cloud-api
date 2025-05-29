@@ -1,0 +1,80 @@
+<div class="home">
+  <app-navbar-home></app-navbar-home>
+
+  <div class="background-container">
+    <img src="/src/assets/images/backg.png" alt="background" class="background-image" />
+  </div>
+
+  <!-- Secțiunea de profil (hero-section) care va fi afișată deasupra imaginii -->
+  <div id="Home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="profile-section">
+      <h2>Profile</h2>
+
+      <!-- <div class="input-group">
+        <label>Email:</label>
+        <input type="email" #emailInput [disabled]="!editMode" [value]="user.email"
+          (input)="user.email = emailInput.value">
+      </div> -->
+
+      <div class="input-group">
+        <label>Username:</label>
+        <input type="text" #usernameInput [disabled]="!editMode" [value]="user?.username"
+          (input)="user && (user.username = usernameInput.value)">
+      </div>
+
+      <div class="input-group">
+        <label>First Name:</label>
+        <input type="text" #firstNameInput [disabled]="!editMode" [value]="user?.firstName"
+          (input)="user && (user.firstName = firstNameInput.value)">
+      </div>
+
+      <div class="input-group">
+        <label>Last Name:</label>
+        <input type="text" #lastNameInput [disabled]="!editMode" [value]="user?.lastName"
+          (input)="user && (user.lastName = lastNameInput.value)">
+      </div>
+
+      <div class="input-group">
+        <label>Address:</label>
+        <input type="text" #addressInput [disabled]="!editMode" [value]="user?.address"
+          (input)="user && (user.address = addressInput.value)">
+      </div>
+
+      <div class="input-group">
+        <label>Phone Number:</label>
+        <input type="text" #phoneInput [disabled]="!editMode" [value]="user?.phoneNumber"
+          (input)="user && (user.phoneNumber = phoneInput.value)">
+      </div>
+
+      <div class="input-group">
+        <label>Nationality:</label>
+        <input type="text" #nationalityInput [disabled]="!editMode" [value]="user?.nationality"
+          (input)="user && (user.nationality = nationalityInput.value)">
+      </div>
+
+      <!-- <div class="input-group">
+        <label>Role:</label>
+        <input type="text" #roleInput [disabled]="!editMode" [value]="user.role"
+          (input)="user.role = roleInput.value">
+      </div> -->
+
+      <div class="input-group">
+        <label>Company:</label>
+        <input type="text" #companyInput [disabled]="!editMode" [value]="user?.company"
+          (input)="user && (user.company = companyInput.value)">
+      </div>
+
+      <div class="input-group">
+        <label>Type:</label>
+        <input type="text" #typeInput [disabled]="!editMode" [value]="user?.type"
+          (input)="user && (user.type = typeInput.value)">
+      </div>
+
+      <div class="button-group">
+        <button *ngIf="!editMode" (click)="enableEdit()">Modify</button>
+        <button *ngIf="editMode" (click)="submitProfile()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

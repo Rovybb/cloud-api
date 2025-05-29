@@ -1,0 +1,59 @@
+<div class="profile">
+  <nav class="navbar">       
+    <div class="logo">
+        <a href="#">Smart Real Estate</a>
+    </div>
+    <ul class="menu">
+        <li><a class="menu-button" href="/home">Home</a></li>
+        <li><a class="menu-button" href="/profile">Profile</a></li>
+        <li><a class="menu-button" href="/properties">Properties</a></li>
+    </ul>
+    <div class="right-menu">
+        <a class="logout-button" href="#" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+
+  <div class="profile-container" *ngIf="isAuthenticated; else notLoggedIn">
+    <h1 class="textt">Profile</h1>
+    <div *ngIf="isLoading; else profileContent" class="loading">
+      <p>Loading user information...</p>
+    </div>
+
+    <ng-template #profileContent>
+      <div *ngIf="user; else errorContent" class="user-details">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>First Name:</strong> {{ user.firstName }}</p>
+        <p><strong>Last Name:</strong> {{ user.lastName }}</p>
+        <p><strong>Address:</strong> {{ user.address }}</p>
+        <p><strong>Phone Number:</strong> {{ user.phoneNumber }}</p>
+        <p><strong>Nationality:</strong> {{ user.nationality }}</p>
+        <p><strong>Status:</strong> {{ getUserStatus(user.status) }}</p>
+        <p><strong>Role:</strong> {{ getUserRole(user.role) }}</p>
+        <p *ngIf="user.company"><strong>Company:</strong> {{ user.company }}</p>
+        <p *ngIf="user.type"><strong>Type:</strong> {{ user.type }}</p>
+        <p *ngIf="user.lastLogin"><strong>Last Login:</strong> {{ user.lastLogin | date:'medium' }}</p>
+
+        <!-- Update Information Button -->
+        <button mat-raised-button color="primary" (click)="openUpdateDialog()">
+          Update Information
+        </button>
+
+        <!-- View Properties Button -->
+        <button mat-button color="primary" (click)="navigateToProperties()">View Properties</button>
+      </div>
+    </ng-template>
+
+    <ng-template #errorContent>
+      <p class="error">{{ error }}</p>
+    </ng-template>
+  </div>
+
+  <ng-template #notLoggedIn>
+    <div class="not-logged-in">
+      <p>You are not logged in. Please <a (click)="navigateToLogin()" class="link">login</a> or <a
+          (click)="navigateToRegister()" class="link">register</a>.</p>
+    </div>
+  </ng-template>
+</div>
